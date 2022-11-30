@@ -4,8 +4,14 @@
       <h1>BoolFlix</h1>
       <div>
         <label for="search">
-          <input type="text">
-          <button>Cerca</button>
+          <input
+            id="s"
+            v-model="searchString"
+            type="text"
+            name="s"
+            @keyup.enter="search"
+          >
+          <button @click="search">Cerca</button>
         </label>
       </div>
     </div>
@@ -15,6 +21,16 @@
 <script>
 export default {
   name: 'HeaderPage',
+  data() {
+    return {
+      searchString: '',
+    };
+  },
+  methods: {
+    search() {
+      this.$emit('search', this.searchString);
+    },
+  },
 };
 </script>
 
