@@ -1,7 +1,7 @@
 <template>
   <div>
-    {{ ( 'ricerca in filmPage' + ' ' + getString) }}
-    <card-content :film-string="getString" />
+    {{ ( 'ricerca in filmPage' + ' ' + mainString) }}
+    <card-content :film-string="mainString" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   name: 'FilmPage',
   components: { CardContent },
   props: {
-    getString: String,
+    mainString: String,
   },
 };
 </script>

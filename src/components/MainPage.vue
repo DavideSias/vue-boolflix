@@ -1,7 +1,7 @@
 <template>
   <main>
     <film-page
-      :get-string="getString"
+      :main-string="searchedString"
     />
   </main>
 </template>
@@ -16,13 +16,6 @@ export default {
   },
   props: {
     searchedString: String,
-  },
-  computed: {
-    getString() {
-      let getString = '';
-      getString = this.searchedString;
-      return getString;
-    },
   },
 };
 </script>
