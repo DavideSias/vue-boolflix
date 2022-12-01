@@ -9,6 +9,8 @@
       <p>{{ originalTitle }}</p>
       <p> <lang-flag :iso="originalLanguage" /> </p>
       <p>{{ vote }}</p>
+      <font-awesome-icon icon="fa-solid fa-star" />
+      <font-awesome-icon icon="fa-regular fa-star" />
     </div>
   </div>
 </template>
