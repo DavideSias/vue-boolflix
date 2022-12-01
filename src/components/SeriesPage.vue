@@ -37,6 +37,7 @@ export default {
 
 h2{
   margin: 2rem 0;
+  font-size: 2rem;
 }
 .flex-container {
   display: flex;
