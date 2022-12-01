@@ -1,21 +1,23 @@
 <template>
   <main>
-    <film-page
-      :main-string="searchedString"
-    />
+    <film-page :arr-movies="arrMovies" />
+    <series-page :arr-series="arrSeries" />
   </main>
 </template>
 
 <script>
 import FilmPage from '@/components/FilmPage.vue';
+import SeriesPage from '@/components/SeriesPage.vue';
 
 export default {
   name: 'MainPage',
   components: {
     FilmPage,
+    SeriesPage,
   },
   props: {
-    searchedString: String,
+    arrMovies: Array,
+    arrSeries: Array,
   },
 };
 </script>

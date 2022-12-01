@@ -1,7 +1,16 @@
 <template>
   <div>
-    {{ ( 'ricerca in filmPage' + ' ' + mainString) }}
-    <card-content :film-string="mainString" />
+    <h2 v-if="arrMovies.length">
+      Movies
+    </h2>
+    <card-content
+      v-for="movie in arrMovies"
+      :key="movie.id"
+      :title="movie.title"
+      :original-title="movie.original_title"
+      :original-language="movie.original_language"
+      :vote="movie.vote_average"
+    />
   </div>
 </template>
 
@@ -12,7 +21,7 @@ export default {
   name: 'FilmPage',
   components: { CardContent },
   props: {
-    mainString: String,
+    arrMovies: Array,
   },
 };
 </script>

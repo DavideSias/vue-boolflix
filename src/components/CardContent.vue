@@ -1,14 +1,23 @@
 <template>
   <div>
-    {{ ( 'ricerca in cardContent' + ' ' + filmString) }}
+    <ul>
+      <li>{{ title }}</li>
+      <li>{{ originalTitle }}</li>
+      <li>{{ originalLanguage }}</li>
+      <li>{{ vote }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'CardContent',
   props: {
-    filmString: String,
+    title: String,
+    originalTitle: String,
+    originalLanguage: String,
+    vote: Number,
   },
 };
 </script>

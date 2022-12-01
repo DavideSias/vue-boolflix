@@ -3,7 +3,7 @@
     <div class="navbar">
       <h1>BoolFlix</h1>
       <div>
-        <label for="search">
+        <label for="s">
           <input
             id="s"
             v-model="searchString"
@@ -11,7 +11,7 @@
             name="s"
             @keyup.enter="search"
           >
-          <button @click="search">Cerca</button>
+          <button @click="search">Search</button>
         </label>
       </div>
     </div>
@@ -29,6 +29,7 @@ export default {
   methods: {
     search() {
       this.$emit('search', this.searchString);
+      this.searchString = '';
     },
   },
 };
