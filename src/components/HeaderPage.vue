@@ -47,5 +47,9 @@ export default {
       color: red;
       text-transform: uppercase;
     }
+
+    input, button{
+      height: 25px;
+    }
   }
 </style>

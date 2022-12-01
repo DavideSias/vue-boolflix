@@ -2,11 +2,10 @@
   <div>
     <h2
       v-if="arrMovies.length"
-      class="mb-3"
     >
       Movies
     </h2>
-    <div class="row row-cols-4 g-3">
+    <div class="flex-container">
       <card-content
         v-for="movie in arrMovies"
         :key="movie.id"
@@ -15,6 +14,8 @@
         :original-title="movie.original_title"
         :original-language="movie.original_language"
         :vote="Math.round(movie.vote_average / 2)"
+        :overview="movie.overview"
+        class="card"
       />
     </div>
   </div>
@@ -33,4 +34,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h2{
+  margin: 2rem 0;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.card{
+  cursor: pointer;
+}
 </style>

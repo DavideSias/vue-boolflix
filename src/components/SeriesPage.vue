@@ -1,12 +1,11 @@
 <template>
-  <div class="mt-5">
+  <div>
     <h2
       v-if="arrSeries.length"
-      class="mb-3"
     >
-      Serie TV
+      TV Series
     </h2>
-    <div class="row row-cols-4 g-3">
+    <div class="flex-container">
       <card-content
         v-for="series in arrSeries"
         :key="series.id"
@@ -15,6 +14,8 @@
         :original-title="series.original_name"
         :original-language="series.original_language"
         :vote="Math.round(series.vote_average / 2)"
+        :overview="series.overview"
+        class="card"
       />
     </div>
   </div>
@@ -34,4 +35,17 @@ export default {
 
 <style lang="scss" scoped>
 
+h2{
+  margin: 2rem 0;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.card{
+  cursor: pointer;
+}
 </style>
