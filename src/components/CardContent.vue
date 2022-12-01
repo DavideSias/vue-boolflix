@@ -8,9 +8,18 @@
       <p>{{ title }}</p>
       <p>{{ originalTitle }}</p>
       <p> <lang-flag :iso="originalLanguage" /> </p>
-      <p>{{ vote }}</p>
-      <font-awesome-icon icon="fa-solid fa-star" />
-      <font-awesome-icon icon="fa-regular fa-star" />
+      <p class="text-warning">
+        <font-awesome-icon
+          v-for="star in vote"
+          :key="getRandomNumber(star)"
+          icon="fa-solid fa-star"
+        />
+        <font-awesome-icon
+          v-for="regular_star in (5 - vote)"
+          :key="getRandomNumber(regular_star)"
+          icon="fa-regular fa-star"
+        />
+      </p>
     </div>
   </div>
 </template>
@@ -32,8 +41,13 @@ export default {
   },
   data() {
     return {
-      apiImg: 'https://image.tmdb.org/t/p/w500',
+      apiImg: 'https://image.tmdb.org/t/p/w342',
     };
+  },
+  methods: {
+    getRandomNumber(number) {
+      return Math.random() * number;
+    },
   },
 };
 </script>
