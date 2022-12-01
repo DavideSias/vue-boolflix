@@ -14,7 +14,7 @@
         :title="series.name"
         :original-title="series.original_name"
         :original-language="series.original_language"
-        :vote="series.vote_average"
+        :vote="Math.round(series.vote_average / 2)"
       />
     </div>
   </div>

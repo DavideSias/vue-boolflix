@@ -14,7 +14,7 @@
         :title="movie.title"
         :original-title="movie.original_title"
         :original-language="movie.original_language"
-        :vote="movie.vote_average"
+        :vote="Math.round(movie.vote_average / 2)"
       />
     </div>
   </div>

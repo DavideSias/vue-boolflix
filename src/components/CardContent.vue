@@ -7,16 +7,20 @@
       >
       <p>{{ title }}</p>
       <p>{{ originalTitle }}</p>
-      <p>{{ originalLanguage }}</p>
+      <p> <lang-flag :iso="originalLanguage" /> </p>
       <p>{{ vote }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags';
 
 export default {
   name: 'CardContent',
+  components: {
+    LangFlag,
+  },
   props: {
     imgUrl: String,
     title: String,
@@ -36,6 +40,7 @@ export default {
 .card{
   border: none;
   height: 100%;
+
   p {
     margin: 0;
   }
