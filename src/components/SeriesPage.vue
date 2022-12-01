@@ -6,10 +6,11 @@
     >
       Serie TV
     </h2>
-    <div class="row row-cols-4 g-2">
+    <div class="row row-cols-4 g-3">
       <card-content
         v-for="series in arrSeries"
         :key="series.id"
+        :img-url="series.poster_path"
         :title="series.name"
         :original-title="series.original_name"
         :original-language="series.original_language"

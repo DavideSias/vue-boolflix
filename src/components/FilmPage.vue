@@ -6,10 +6,11 @@
     >
       Movies
     </h2>
-    <div class="row row-cols-4 g-2">
+    <div class="row row-cols-4 g-3">
       <card-content
         v-for="movie in arrMovies"
         :key="movie.id"
+        :img-url="movie.poster_path"
         :title="movie.title"
         :original-title="movie.original_title"
         :original-language="movie.original_language"
