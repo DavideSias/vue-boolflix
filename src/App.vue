@@ -70,5 +70,6 @@ export default {
 
 body{
   font-family: 'Roboto', sans-serif;
+  background-color: gray;
 }
 </style>

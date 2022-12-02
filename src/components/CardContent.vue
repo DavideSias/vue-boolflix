@@ -1,37 +1,5 @@
 <template>
   <div>
-    <!-- <div class="flip_item">
-      <div class="flip_item_inner">
-        <div class="flip_item_front">
-          <img
-            :src="apiImg + imgUrl"
-            :alt="title"
-          >
-        </div>
-        <div class="flip_item_back">
-          <p>Titolo: {{ title }}</p>
-          <p>Titolo Originale: {{ originalTitle }}</p>
-          <p> <lang-flag :iso="originalLanguage" /> </p>
-          <p>
-            Voto:
-            <font-awesome-icon
-              v-for="star in vote"
-              :key="getRandomNumber(star)"
-              icon="fa-solid fa-star"
-              class="icon"
-            />
-            <font-awesome-icon
-              v-for="regular_star in (5 - vote)"
-              :key="getRandomNumber(regular_star)"
-              icon="fa-regular fa-star"
-              class="icon"
-            />
-          </p>
-          <p>{{ overview }}</p>
-        </div>
-      </div>
-    </div> -->
-
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -89,7 +57,6 @@ export default {
   },
   methods: {
     getRandomNumber(number) {
-      console.log(number);
       return Math.random() * number;
     },
   },
@@ -102,6 +69,7 @@ export default {
   width: 300px;
   aspect-ratio: 1 / 1.5;
   perspective: 1000px;
+
 }
 
 .flip-card-inner {
@@ -121,6 +89,8 @@ export default {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .flip-card-front {
@@ -128,6 +98,7 @@ export default {
   color: black;
   img{
     width: 100%;
+    border-radius: 10px;
   }
 }
 
