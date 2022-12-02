@@ -14,7 +14,7 @@
         :original-title="series.original_name"
         :original-language="series.original_language"
         :vote="Math.round(series.vote_average / 2)"
-        :overview="limitString(series.overview, 500)"
+        :overview="series.overview"
         class="card"
       />
     </div>
@@ -29,14 +29,6 @@ export default {
   components: { CardContent },
   props: {
     arrSeries: Array,
-  },
-  methods: {
-    limitString(string, limit) {
-      if (string.length > 500) {
-        return string.substring(string, limit).concat('...');
-      }
-      return string;
-    },
   },
 };
 </script>

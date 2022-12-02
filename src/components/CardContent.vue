@@ -27,7 +27,7 @@
               class="icon"
             />
           </p>
-          <p>{{ overview }}</p>
+          <p>{{ limitString(overview, 500) }}</p>
         </div>
       </div>
     </div>
@@ -58,6 +58,12 @@ export default {
   methods: {
     getRandomNumber(number) {
       return Math.random() * number;
+    },
+    limitString(string, limit) {
+      if (string.length > 500) {
+        return string.substring(string, limit).concat('...');
+      }
+      return string;
     },
   },
 };

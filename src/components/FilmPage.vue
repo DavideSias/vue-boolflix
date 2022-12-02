@@ -14,7 +14,7 @@
         :original-title="movie.original_title"
         :original-language="movie.original_language"
         :vote="Math.round(movie.vote_average / 2)"
-        :overview="limitString(movie.overview, 500)"
+        :overview="movie.overview"
         class="card"
       />
     </div>
@@ -29,14 +29,6 @@ export default {
   components: { CardContent },
   props: {
     arrMovies: Array,
-  },
-  methods: {
-    limitString(string, limit) {
-      if (string.length > 500) {
-        return string.substring(string, limit).concat('...');
-      }
-      return string;
-    },
   },
 };
 </script>
