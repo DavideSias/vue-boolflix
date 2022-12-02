@@ -98,6 +98,7 @@ export default {
   color: black;
   img{
     width: 100%;
+    height: 100%;
     border-radius: 10px;
   }
 }
@@ -106,8 +107,8 @@ export default {
   background-color: black;
   color: white;
   transform: rotateY(180deg);
-  padding: 1rem;
   text-overflow: hidden; // TODO: sistemare l'overflow del testo
+  padding: 1rem;
 
   p{
     margin: 0.5rem 0;
