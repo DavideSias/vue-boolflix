@@ -1,7 +1,14 @@
 <template>
   <header>
     <div class="navbar">
-      <h1>BoolFlix</h1>
+      <button
+        class="title"
+        @click="refreshPage()"
+      >
+        <h1>
+          BoolFlix
+        </h1>
+      </button>
       <div>
         <label for="s">
           <input
@@ -31,6 +38,9 @@ export default {
       this.$emit('search', this.searchString);
       this.searchString = '';
     },
+    refreshPage() {
+      window.location.reload();
+    },
   },
 };
 </script>
@@ -46,10 +56,30 @@ export default {
     h1 {
       color: red;
       text-transform: uppercase;
+      border-radius: 1rem;
+
+      &:active {
+        animation: pulse 0.2s 1 ease-out;
+      }
+    }
+    .title{
+      background: none;
+      cursor: pointer;
     }
 
     input, button{
       height: 25px;
     }
+
+    @keyframes pulse {
+  from {
+    box-shadow:
+                 0 0 0 0 rgba(129, 0, 0, 1);
   }
+  to {
+    box-shadow:
+                 0 0 0 1em rgba(129, 0, 0, 0);
+  }
+  }
+}
 </style>
